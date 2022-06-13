@@ -59,6 +59,7 @@ header{
   color: var(--color-white);
   overflow: hidden;
   padding: 0 !important;
+  background-color: #F56692;
 }
 
 section{
@@ -116,4 +117,93 @@ section{
   align-items: center;
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
+}
+.btn-con {
+  /* phần chứa nút, đảm bảo cho khung có kích cỡ đủ */
+  display: flex;
+  align-self: flex-start;
+}
+
+.main-btn {
+  /* cài đặt cho nút download cv */
+  border-radius: 30px;
+  color: inherit;
+  font-weight: 600;
+  position: relative;
+  border: 1px solid var(--color-secondary);
+  display: flex;
+  align-self: flex-start;
+  align-items: center;
+  overflow: hidden;
+}
+
+.main-btn .btn-text {
+  padding: 0 2rem;
+}
+
+.main-btn .btn-icon {
+  background-color: var(--color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  padding: 1rem;
+}
+
+.main-btn::before {
+  /* Phần tử giả của main-btn, tạo nền giả ko gây ảnh hưởng tới phần tử thật */
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translateX(100%);
+  transition: all 0.4s ease-out;
+  z-index: -1;
+}
+
+.main-btn:hover {
+  transition: all 0.4s ease-out;
+}
+
+.main-btn:hover::before {
+  width: 100%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  transform: translateX(0);
+  transition: all 0.4s ease-out;
+}
+
+.main-title {
+  /* Cài đặt cho các tiêu đề mỗi mục */
+  text-align: center;
+}
+
+.main-title h2 {
+  position: relative;
+  text-transform: uppercase;
+  font-size: 4rem;
+  font-weight: 700;
+}
+
+.main-title h2 span {
+  color: var(--color-secondary);
+}
+
+.main-title h2 .bg-text {
+  /* Phần chữ được sử dụng làm nên cho tiêu đề */
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  /* Chỉnh top left 50% để đặt vào chính giữa */
+  color: var(--color-grey-5);
+  transition: all 0.4s ease-in-out;
+  z-index: -1;
+  transform: translate(-50%, -50%);
+  font-weight: 800;
+  /* độ đậm của chữ */
+  font-size: 6.3rem;
+}
+
+.about-container .left-about p {
+  padding-left: 0;
 }
