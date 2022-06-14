@@ -118,6 +118,98 @@ section{
   margin: 0.7rem 0;
   box-shadow: var(--box-shadow-1);
 }
+.controls .control i {
+  font-size: 1.2rem;
+  color: var(--color-grey-2);
+  pointer-events: none;
+}
+.theme-btn {
+  top: 5%;
+  right: 3%;
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  background-color: var(--color-grey-4);
+  cursor: pointer;
+  position: fixed;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 3px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.1s ease-in-out;
+}
+.theme-btn:active {
+  transform: translateY(-3px);
+}
+.theme-btn i {
+  font-size: 1.4rem;
+  color: var(--color-grey-2);
+  pointer-events: none;
+}
+.header-content {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  min-height: 100vh;
+
+}
+.header-content .left-header{
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+.header-content .left-header .h-shape{
+  transition: all 0.4s ease-in-out;
+  width: 65%;
+  height: 100%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: -1;
+  clip-path: polygon(0 0, 46% 0, 79% 100%, 0% 100%);
+}
+.header-content .left-header .image {
+  border-radius: var(--br-sm-2);
+  height: 90%;
+  width: 68%;
+  margin-left: 4rem;
+  background-color: var(--color-black);
+  transition: all 0.4s ease-in-out;
+}
+.header-content .left-header .image img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.4s ease-in-out;
+  filter: grayscale(100%);
+}
+.header-content .left-header .image img:hover {
+  filter: grayscale(0);
+}
+.header-content .right-header{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding-right: 18rem;
+}
+.header-content .right-header .name {
+  font-size: 3rem;
+}
+.header-content .right-header .name span {
+  color: var(--color-secondary);
+}
+.header-content .right-header p {
+  margin: 1.5rem 0;
+  line-height: 2rem;
+}
+.about-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+}
+
+
 .btn-con {
   /* phần chứa nút, đảm bảo cho khung có kích cỡ đủ */
   display: flex;
