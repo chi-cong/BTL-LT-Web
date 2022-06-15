@@ -208,6 +208,12 @@ section{
   padding-top: 3.5rem;
   padding-bottom: 5rem;
 }
+.about-container .right-about {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 2rem;
+}
+
 
 
 .btn-con {
