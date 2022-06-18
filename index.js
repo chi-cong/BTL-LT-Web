@@ -28,5 +28,5 @@ function PageTransitions(){
         }
     })
 }
- PageTransitions();
+PageTransitions();
 
