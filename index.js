@@ -1,32 +1,16 @@
-const containers = document.querySelectorAll('.container');
-const secBtns = document.querySelectorAll('.controls');
-const secBtn = document.querySelectorAll('.control');
-const allcontainers = document.querySelector('.main-content');
-
-
-function PageTransitions(){
-    for(let i = 0; i < secBtn.length; i++){
-        secBtn[i].addEventListener('click', function(){
-            let currentBtn = document.querySelectorAll('.active-btn');
-            currentBtn[0].className = currentBtn[0].className.replace('active-btn', '');
-            this.className += ' active-btn';
+(function () {
+    [...document.querySelectorAll(".control")].forEach(button => {
+        button.addEventListener("click", function () {
+            document.querySelector(".active-btn").classList.remove("active-btn");
+            this.classList.add("active-btn");
+            // trong trường hợp này ko dùng arrow func vì như vậy 'this' sẽ là undefined
+            document.querySelector(".active").classList.remove("active");
+            // page container nào đang hiện thì sẽ bị bỏ
+            document.getElementById(button.dataset.id).classList.add("active");
+            // hiện page container nào có id trùng với data.id của button
         })
-    }
-    allcontainers.addEventListener('click', (e)=>{
-        const id = e.target.dataset.id;
-        if (id){
-            secBtns.forEach((btn) =>{
-                btn.classList.remove('active')
-            })
-            e.target.classList.add('active')
-
-            containers.forEach((container)=>{
-                container.classList.remove('active')
-            })
-            const element = document.getElementById(id);
-            element.classList.add('active');
-        }
+    });
+    document.querySelector(".theme-btn").addEventListener("click", () => {
+        document.body.classList.toggle("light-mode");
     })
-}
-PageTransitions();
-
+})();
